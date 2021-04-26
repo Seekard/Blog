@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+
+{% for item in publications %}
+<div class="card">
+  <div class="card-body ">
+    <h5 class="card-title">{{ item.title }}</h5>
+    <p class="card-text">{{ item.content }}</p>
+    <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Потом придумаем</a>
+  </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
